@@ -12,13 +12,11 @@
 
 Using sbt
 
-    sbt "run --help"
-    e.g. sbt "run --search-terms=114  --field-name=_id --doc-type=ORGANIZATION"
+    sbt "run [path to json files - defaults to src/main/resources]"    
 
 Using pre-built fat jar
     
-    java -jar simple-search-fat.jar --help
-    e.g. java -jar simple-search-fat.jar --search-terms=114  --field-name=_id --doc-type=ORGANIZATION
+    java -jar simple-search-fat.jar [path to json files - defaults to src/main/resources]
 
 ## Build, Test & Package
 

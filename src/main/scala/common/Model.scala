@@ -1,7 +1,9 @@
 package common
 
 object DocumentType extends Enumeration {
-  val TICKET, ORGANIZATION, USER = Value
+  val USER = Value(1)
+  val TICKET = Value(2)
+  val ORGANIZATION = Value(3)
 }
 
 

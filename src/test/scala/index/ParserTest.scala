@@ -33,7 +33,6 @@ class ParserTest extends FunSuite {
         |      "Northern Mariana Islands"
         |    ],
         |    "has_incidents": false,
-        |    "due_at": "2016-07-31T02:37:50 -10:00",
         |    "via": "web"
         |  },
         |  {
@@ -68,12 +67,13 @@ class ParserTest extends FunSuite {
 
     val addToBuf: (Map[String, Any] => Unit) = { toAdd => buf += toAdd }
 
-    TestParser.parseStreamAndProcess(inputStream, addToBuf)
+    val fields = TestParser.parseStreamAndProcess(inputStream, addToBuf)
 
     assert(buf.size === 2)
     assert(buf(0).get("_id").get === "436bf9b0-1147-4c0a-8439-6f79833bff5b")
     assert(buf(1).get("tags").get === Seq("Puerto Rico", "Idaho", "Oklahoma", "Louisiana"))
 
+    assert(fields === Set("has_incidents", "assignee_id", "priority", "subject", "url", "description", "_id", "tags", "due_at", "status", "via", "organization_id", "external_id", "created_at", "type", "submitter_id"))
   }
 
 }
