@@ -25,6 +25,8 @@ object SearchConfig {
     val assigneeId = "assignee_id"
     val organizationId = "organization_id"
     val id = "_id"
+    val name = "name"
+    val subject = "subject"
   }
 
   val analyzer: Analyzer = new PerFieldAnalyzerWrapper(customKeywordAnalyzer, analyzersMap);
